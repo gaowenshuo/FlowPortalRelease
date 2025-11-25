@@ -1,8 +1,7 @@
 # FlowPortal: Residual-Corrected Flow for Training-Free Video Relighting and Background Replacement
 
-ArXiv: Coming soon
+[🟥 **ArXiv**](https://arxiv.org/abs/2511.18346) · [🟦 **Project Page**](https://gaowenshuo.github.io/FlowPortalProject/)
 
-Project Page: https://gaowenshuo.github.io/FlowPortalProject/
 
 ## Abstract
 
