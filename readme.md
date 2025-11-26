@@ -1,7 +1,8 @@
 # FlowPortal: Residual-Corrected Flow for Training-Free Video Relighting and Background Replacement  
 <img src="logo.png" alt="FlowPortal Logo" width="120"/>
 
-Wenshuo Gao, Junyi Fan, Jiangyue Zeng, Shuai Yang  
+[Wenshuo Gao](https://gaowenshuo.github.io/index/), Junyi Fan, Jiangyue Zeng, [Shuai Yang](https://williamyang1991.github.io/)
+
 
 [🟥 **ArXiv**](https://arxiv.org/abs/2511.18346) · [🟦 **Project Page**](https://gaowenshuo.github.io/FlowPortalProject/)
 
