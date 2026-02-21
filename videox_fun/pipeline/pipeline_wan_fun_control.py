@@ -1378,10 +1378,20 @@ class WanFunControlPipeline(DiffusionPipeline):
                             partial_edit_mask = resize_partial_mask(partial_edit_mask, x_src)
                             noise_pred_tar = original_noise_pred_tar * (1 - partial_edit_mask) + noise_pred_tar * partial_edit_mask
 
-                    x_pred_tar = zt_edit_list[i_avg] - t_i * noise_pred_tar
+
+                    x_pred_src = zt_src - t_i * noise_pred_src
+                    x_pred_tar = zt_tar - t_i * noise_pred_tar
                     z_pred_src = zt_src - (t_i - t_im1) * noise_pred_src
                     z_pred_tar = zt_tar - (t_i - t_im1) * noise_pred_tar
                     z_pred_delta = z_pred_tar - z_pred_src
+                    retinex_modeling = True
+                    if retinex_modeling:
+                        x_pred_src_retinex = torch.clamp(x_pred_src + 10, min=8)
+                        x_src_retinex = torch.clamp(x_src + 10, min=8)
+                        retinex_multiplier = x_src_retinex / x_pred_src_retinex
+                        original_range = (z_pred_delta.max(), z_pred_delta.min())
+                        z_pred_delta = z_pred_delta * retinex_multiplier
+                        z_pred_delta = torch.clamp(z_pred_delta, min=original_range[1], max=original_range[0])
                     z_pred_delta_list.append(z_pred_delta)
                     z_pred_tar_list.append(z_pred_tar)
                     x_pred_tar_list.append(x_pred_tar)
