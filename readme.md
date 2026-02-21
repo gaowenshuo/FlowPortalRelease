@@ -6,6 +6,8 @@
 
 [🟥 **ArXiv**](https://arxiv.org/abs/2511.18346) · [🟦 **Project Page**](https://gaowenshuo.github.io/FlowPortalProject/)
 
+## News: Accepted by CVPR 2026 !!! 🎇
+
 ---
 
 ## Abstract
